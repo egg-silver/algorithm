@@ -49,3 +49,13 @@ function solution(s, n) {
 }
 
 console.log(solution('a B z', 4)); // 예시 입력
+
+//다른 사람 풀이
+function solution(s, n) {
+  var chars =
+    'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXY                          ';
+  return s
+    .split('')
+    .map((e) => chars[chars.indexOf(e) + n])
+    .join('');
+}
