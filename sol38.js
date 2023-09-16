@@ -17,5 +17,35 @@
 
 function solution(array, commands) {
   var answer = [];
+  commands.map((arr) => {
+    const start = arr[0] - 1;
+    const end = arr[1];
+    sort = array.slice(start, end).sort((a, b) => a - b);
+    answer.push(sort[arr[2] - 1]);
+  });
+  return answer;
+}
+
+console.log(
+  solution(
+    [1, 5, 2, 6, 3, 7, 4],
+    [
+      [2, 5, 3],
+      [4, 4, 1],
+      [1, 7, 3],
+    ]
+  )
+);
+//[5, 2, 6, 3]
+// console.log('prac',[1, 5, 2, 6, 3, 7, 4].slice(2,5)); //263
+// console.log('prac',[1, 5, 2, 6, 3, 7, 4].slice(1,5)); //5263
+
+// 다른 사람 풀이
+function solution(array, commands) {
+  var answer = [];
+
+  answer = commands.map((a) => {
+    return array.slice(a[0] - 1, a[1]).sort((b, c) => b - c)[a[2] - 1];
+  });
   return answer;
 }
